@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shifa Shah- Portfolio</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f5f5f5;
+      color: #222;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2.5rem;
+      background: #fff;
+      border-bottom: 1px solid #e0e0e0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav .logo {
+      font-size: 20px;
+      font-weight: 600;
+      color: #222;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+
+    nav ul a {
+      text-decoration: none;
+      color: #555;
+      font-size: 15px;
+    }
+
+    nav ul a:hover {
+      color: #534AB7;
+    }
+
+    .hero {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      padding: 4rem 2.5rem;
+      background: #fff;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: #EEEDFE;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      font-weight: 600;
+      color: #534AB7;
+      flex-shrink: 0;
+    }
+    .avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+    .hero-text h1 {
+      font-size: 28px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .hero-text p {
+      font-size: 15px;
+      color: #555;
+      line-height: 1.7;
+      max-width: 500px;
+    }
+
+    .badges {
+      margin-top: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .badge {
+      background: #EEEDFE;
+      color: #534AB7;
+      font-size: 12px;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-weight: 500;
+    }
+
+    section {
+      padding: 3rem 2.5rem;
+      border-bottom: 1px solid #e0e0e0;
+      background: #fff;
+      margin-top: 1.5rem;
+    }
+
+    section h2 {
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #888;
+      margin-bottom: 1.5rem;
+    }
+
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill-pill {
+      background: #f5f5f5;
+      border: 1px solid #e0e0e0;
+      border-radius: 20px;
+      padding: 6px 16px;
+      font-size: 14px;
+      color: #333;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+
+    .project-card {
+      background: #fafafa;
+      border: 1px solid #e0e0e0;
+      border-radius: 12px;
+      padding: 1.25rem;
+    }
+
+    .project-card h3 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #222;
+    }
+
+    .project-card p {
+      font-size: 13px;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    .project-tags {
+      margin-top: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .project-tag {
+      background: #E1F5EE;
+      color: #085041;
+      font-size: 11px;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-weight: 500;
+    }
+
+    .contact-info {
+      font-size: 15px;
+      color: #555;
+      line-height: 2;
+    }
+
+    .contact-info a {
+      color: #534AB7;
+      text-decoration: none;
+    }
+
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 13px;
+      color: #aaa;
+      background: #fff;
+      border-top: 1px solid #e0e0e0;
+      margin-top: 1.5rem;
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+      }
+
+      .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 2.5rem 1.5rem;
+      }
+
+      .badges {
+        justify-content: center;
+      }
+
+      section {
+        padding: 2rem 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <span class="logo">Shifa shah</span>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="hero" id="about">
+    <div class="avatar"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1376&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="ss" width="200px"></div>
+    <div class="hero-text">
+      <h1>Shifa Shah</h1>
+      <p>Frontend web developer passionate about building clean, user-friendly web applications. I love turning ideas into real products.</p>
+      <div class="badges">
+        <span class="badge">Open to Work</span>
+        <span class="badge">Pakistan</span>
+        <span class="badge">1+ Years Experience</span>
+      </div>
+    </div>
+  </div>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+
+      <span class="skill-pill">HTML & CSS</span>
+      <span class="skill-pill">JavaScript</span>
+      <span class="skill-pill">React</span>
+      
+      
+      <span class="skill-pill">UI Design</span>
+      <span class="skill-pill">Git & GitHub</span>
+      
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <img src="https://media.istockphoto.com/id/1467860576/photo/laptop-with-the-website-of-the-online-store-and-shopping-bags.jpg?s=2048x2048&w=is&k=20&c=CVrqagIq38rblFmdfuKDnM7dZtVEkqMgmSSCmhrI2aI=" alt="store" width="300px">
+        <h3>E-Commerce Store</h3>
+        <p>A fully responsive online store with cart, checkout, and payment integration.</p>
+        <div class="project-tags">
+          <span class="project-tag">javascript</span>
+          <span class="project-tag">css</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        
+        <img src="https://images.unsplash.com/photo-1581675377238-14077d226605?q=80&w=327&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="task managger" width="300px" height="200px">
+        <h3>Task Manager App</h3>
+        <p>A productivity app with drag-and-drop tasks, deadlines, and team collaboration.</p>
+        <div class="project-tags">
+          <span class="project-tag">JavaScript</span>
+          <span class="project-tag">CSS</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="https://media.istockphoto.com/id/2254504495/photo/dynamic-data-analytics-dashboard-with-charts-and-trends-for-business-insights-and-market.jpg?s=1024x1024&w=is&k=20&c=u4Jv-4jrxrubynh1mMQ-sFujgFxxoTomoqR3Zcd3A3g=" alt="whether dashboard" width="300px">
+        <h3>Weather Dashboard</h3>
+        <p>Live weather updates using public APIs with clean, modern data visualizations.</p>
+        <div class="project-tags">
+           <span class="project-tag">JavaScript</span>
+          <span class="project-tag">CSS</span>
+         
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="contact-info">
+      <p>Email: <a href="mailto:ali@example.com">shifa@example.com</a></p>
+      <p>GitHub: <a href="https://github.com/" target="_blank">github.com/shifa</a></p>
+      <p>LinkedIn: <a href="https://linkedin.com/" target="_blank">linkedin.com/in/shifashah</a></p>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2026 SHIFA SHAH. All rights reserved.
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive Layout</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<style>
+    
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  color: #333;
+}
+
+
+.navbar {
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+  padding: 0 2rem;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: #1D9E75;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #555;
+  font-size: 15px;
+}
+
+.nav-links a:hover {
+  color: #1D9E75;
+}
+
+
+#menu-toggle {
+  display: none;
+}
+
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #333;
+  transition: all 0.3s;
+}
+
+
+.mobile-menu {
+  display: none;
+  list-style: none;
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+  z-index: 99;
+}
+
+.mobile-menu li a {
+  display: block;
+  padding: 14px 2rem;
+  text-decoration: none;
+  color: #555;
+  border-bottom: 1px solid #eee;
+  font-size: 15px;
+}
+
+.mobile-menu li a:hover {
+  color: #1D9E75;
+}
+
+
+#menu-toggle:checked ~ .mobile-menu {
+  display: flex;
+}
+
+
+#menu-toggle:checked ~ .hamburger span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+#menu-toggle:checked ~ .hamburger span:nth-child(2) {
+  opacity: 0;
+}
+
+#menu-toggle:checked ~ .hamburger span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  padding: 4rem 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.hero-text h1 {
+  font-size: 40px;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.hero-text h1 span {
+  color: #1D9E75;
+}
+
+.hero-text p {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.btn {
+  display: inline-block;
+  background: #1D9E75;
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 28px;
+  font-size: 15px;
+  border-radius: 8px;
+}
+
+.btn:hover {
+  background: #178360;
+}
+
+.hero-image {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.box {
+  padding: 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 16px;
+  color: #fff;
+  text-align: center;
+}
+
+.green  { background: #1D9E75; }
+.blue   { background: #378ADD; }
+.orange { background: #EF9F27; }
+
+
+.cards-section {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+.cards-section h2 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 2rem;
+  color: #222;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 1.5rem;
+}
+
+.card h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #1D9E75;
+}
+
+.card p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.7;
+}
+
+
+footer {
+  background: #fff;
+  border-top: 1px solid #ddd;
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 14px;
+  color: #888;
+}
+
+
+@media (max-width: 768px) {
+
+  .nav-links {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 3rem 1.5rem;
+  }
+
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+@media (max-width: 480px) {
+
+  .hero-text h1 {
+    font-size: 28px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding: 2rem 1rem;
+  }
+
+  .cards-section {
+    padding: 2rem 1rem;
+  }
+}
+</style>
+<body>
+
+  
+  <nav class="navbar">
+    <div class="logo">GridLab</div>
+
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+
+    
+    <input type="checkbox" id="menu-toggle" />
+    <label for="menu-toggle" class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+
+    <ul class="mobile-menu">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Responsive <span>Web Design</span></h1>
+      <p>Ye page CSS Grid, Flexbox aur Media Queries use karta hai. Browser resize karo aur farq dekho!</p>
+      <a href="#" class="btn">Get Started</a>
+    </div>
+    <div class="hero-image">
+      <div class="box green">CSS Grid</div>
+      <div class="box blue">Flexbox</div>
+      <div class="box orange">Media Queries</div>
+    </div>
+  </section>
+
+  
+  <section class="cards-section">
+    <h2>Key Concepts</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>CSS Grid</h3>
+        <p>2D layout banane ka best tarika. Rows aur columns dono control karo.</p>
+      </div>
+      <div class="card">
+        <h3>Flexbox</h3>
+        <p>Single row ya column ke liye perfect. Nav bars aur centering ke liye use karo.</p>
+      </div>
+      <div class="card">
+        <h3>Media Queries</h3>
+        <p>Screen size ke hisaab se CSS change karo. Mobile first approach follow karo.</p>
+      </div>
+    </div>
+  </section>
+
+  
+  <footer>
+    <p>Made with HTML & CSS &mdash; Responsive Design task at decodelab</p>
+  </footer>
+
+</body>
+</html>
